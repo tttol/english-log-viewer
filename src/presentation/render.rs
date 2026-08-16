@@ -1,6 +1,24 @@
 use ratatui::{Frame, layout::{Alignment, Constraint, Layout}, widgets::{Block, Paragraph, Row, Table}};
 
+// TITLE
+// BEFORE, AFTER, COMMENT, REVIEWED_AT
 pub fn render(frame: &mut Frame) {
+    let [title_area, review_area] = Layout::horizontal([
+        Constraint::Percentage(50),
+        Constraint::Percentage(50)
+    ]).areas(frame.area());
+
+    let [before_area, after_area, comment_area, reviewed_at_area] = Layout::vertical([
+        Constraint::Min(1),
+        Constraint::Min(1),
+        Constraint::Min(1),
+        Constraint::Length(1)
+    ])
+    .areas(review_area);
+
+
+
+    ////////////////////////////////////////
     let [header_area, table_area, footer_area] = Layout::vertical([
         Constraint::Length(3),
         Constraint::Min(1),
