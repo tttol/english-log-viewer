@@ -1,4 +1,4 @@
-use ratatui::{layout::{Alignment, Constraint, Layout}, widgets::{Block, Paragraph, Row, Table}};
+use ratatui::{Frame, layout::{Alignment, Constraint, Layout}, widgets::{Block, Paragraph, Row, Table}};
 
 pub fn render(frame: &mut Frame) {
     let [header_area, table_area, footer_area] = Layout::vertical([
